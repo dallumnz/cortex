@@ -1,6 +1,6 @@
 <aside class="navbar-aside" id="offcanvas_aside">
     <div class="aside-top">
-        <a href="page-index-1.html" class="brand-wrap">
+        <a href="{{ route('admin.index') }}" class="brand-wrap">
             <img src="{{ asset('storage/images/dalbro-admin.png') }}" height="46" class="logo" alt="dalbro Admin Panel">
         </a>
         <div>
@@ -8,11 +8,11 @@
                 <i class="bi bi-chevron-bar-left"></i>
             </button>
         </div>
-    </div> <!-- aside-top.// -->
+    </div> <!-- aside-top -->
 
     <nav>
         <ul class="menu-aside">
-            <li class="menu-item active">
+            <li class="menu-item">
                 <a class="menu-link" href="{{ route('admin.index') }}">
                     <i class="bi bi-house-fill"></i>
                     <span class="text">Dashboard</span>
@@ -23,17 +23,6 @@
                     <i class="bi bi-file-earmark-richtext-fill"></i>
                     <span class="text">Posts</span>
                 </a>
-            </li>
-            <li class="menu-item has-submenu">
-                <a class="menu-link" href="#">
-                    <i class="bi bi-cart-x-fill"></i>
-                    <span class="text">Menu item</span>
-                </a>
-                <div class="submenu">
-                    <a href="#">List view</a>
-                    <a href="#">Table view</a>
-                    <a href="#">Grid view</a>
-                </div>
             </li>
             <hr>
             <small class="text-muted">MANAGE</small>
@@ -96,6 +85,17 @@
                     <i class="bi bi-file-text-fill"></i>
                     <span class="text">Blank page</span>
                 </a>
+            </li>
+            <li class="menu-item has-submenu">
+                <a class="menu-link" href="#">
+                    <i class="bi bi-cart-x-fill"></i>
+                    <span class="text">Menu item</span>
+                </a>
+                <div class="submenu">
+                    <a href="#">List view</a>
+                    <a href="#">Table view</a>
+                    <a href="#">Grid view</a>
+                </div>
             </li>
         </ul>
     </nav>

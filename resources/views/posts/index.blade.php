@@ -52,7 +52,7 @@
                         @if ($post->breaking)
                         <span class="badge rounded-pill bg-danger">Breaking</span>
                         @endif
-                        @if ($post->reccommended)
+                        @if ($post->recommended)
                         <span class="badge rounded-pill bg-info">Recommended</span>
                         @endif
                         @if ($post->headline)

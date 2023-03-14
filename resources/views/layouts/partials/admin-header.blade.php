@@ -15,10 +15,13 @@
         </button>
         <ul class="nav">
             <li class="nav-item">
+                <a class="nav-link btn-icon" href="{{ route('app.index') }}"> <i class="bi bi-house-fill"></i> </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link btn-icon" href="#"> <i class="bi bi-bell-fill"></i> </a>
             </li>
             <li class="nav-item px-3">
-                <a class="nav-link" href="{{ route('admin.index') }}">{{ Auth::user()->name }}</a>
+                <span>{{ Auth::user()->name }}</span>
             </li>
             <li class="dropdown nav-item">
                 <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#"> <img class="img-xs rounded-circle"

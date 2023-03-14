@@ -5,7 +5,7 @@
     <div class="content-header">
         <h2 class="content-title"> Dashboard </h2>
         <div>
-            <a href="#" class="btn btn-primary">Create Analytics Report</a>
+            <a href="#" class="btn btn-primary">View Analytics Report</a>
         </div>
     </div>
     <div class="row">
