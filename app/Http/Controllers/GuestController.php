@@ -7,7 +7,6 @@ use App\Models\Newsletter;
 use App\Models\Post;
 use App\Models\PostArticle;
 use App\Models\Subcategory;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class GuestController extends Controller
@@ -27,9 +26,6 @@ class GuestController extends Controller
         $article = '';
         $post = Post::where('slug', $slug)->first();
         $categories = Category::get()->all();
-        //$category = Category::where('id', $post->category_id)->first();
-        //$subcategory = Subcategory::where('id', $post->subcategory_id)->first();
-        //$user = User::where('id', $post->created_by)->first();
         if ($post->post_type == Post::TYPE_ARTICLE) {
             $article = PostArticle::where('post_id', $post->id)->first();
         }

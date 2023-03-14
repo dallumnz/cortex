@@ -46,8 +46,9 @@
             @endforeach
             @else
             <div class="card mb-4">
-                <a href="{{ route('app.index') }}"><img class="card-img-top" src="{{ asset('/images/theme/post.jpg') }}"
-                        alt="..." /></a>
+                <a href="{{ route('app.index') }}">
+                    <img class="card-img-top" src="{{ asset('storage/images/theme/post.jpg') }}" alt="..." />
+                </a>
                 <div class="card-body">
                     <h2 class="card-title">No posts</h2>
                     <p class="card-text">Unfortunately there are no posts in this category. We are adding new content

@@ -50,40 +50,39 @@
 <!-- Responsive navbar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        {{-- <aclass="navbar-brand"href="route('app.index') --}}{{-- ">dalbro</a> --}}
-        <a href=" {{ route('app.index') }}">
+
+        <a href="{{ route('app.index') }}">
             <img src="{{ asset('storage/images/ti-black-trans.png') }}" height="40" alt="trlpht industries logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    {{--<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    @foreach ($categories as $category)
-                    <li class="nav-item"><a class="nav-link" href="#!">{{ $category->name }}</a></li>
-                    @endforeach--}}
-                    {{--<li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>--}}
-                    @guest
-                    @if(Route::has('login'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Admin</a>
-                    </li>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                {{--<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                @foreach ($categories as $category)
+                <li class="nav-item"><a class="nav-link" href="#!">{{ $category->name }}</a></li>
+                @endforeach--}}
+                {{--<li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>--}}
+                @guest
+                @if(Route::has('login'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">Admin</a>
+                </li>
+                @endif
+                @endguest
+                @auth
+                <li class="nav-item">
+                    @if(Auth::user()->is_admin)
+                    <a class="nav-link" href="{{ route('admin.index') }}">{{ Auth::user()->name }}</a>
+                    @else
+                    <a class="nav-link" href="{{ route('home.index') }}">{{ Auth::user()->name }}</a>
                     @endif
-                    @endguest
-                    @auth
-                    <li class="nav-item">
-                        @if(Auth::user()->is_admin)
-                        <a class="nav-link" href="{{ route('admin.index') }}">{{ Auth::user()->name }}</a>
-                        @else
-                        <a class="nav-link" href="{{ route('home.index') }}">{{ Auth::user()->name }}</a>
-                        @endif
-                    </li>
-                    @endauth
-                </ul>
-            </div>
+                </li>
+                @endauth
+            </ul>
+        </div>
     </div>
 </nav>
