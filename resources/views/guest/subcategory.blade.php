@@ -3,7 +3,7 @@
 @section('content')
 <!-- page intro  -->
 <header class="py-5 bg-light border-bottom mb-4"
-    style="background-image: url({{ asset('images/theme/page.jpg') }}); background-position-y: bottom;">
+    style="background-image: url({{ asset('storage/images/theme/page.jpg') }}); background-position-y: bottom;">
     <div class="container">
         <div class="text-center my-5">
             <h1 class="fw-bolder ">{{ $subcategory->name }}</h1>
