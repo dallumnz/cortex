@@ -52,7 +52,7 @@
     <div class="container">
         {{-- <aclass="navbar-brand"href="route('app.index') --}}{{-- ">dalbro</a> --}}
         <a href=" {{ route('app.index') }}">
-            <img src=" {{ asset('storage/images/ti-black-trans.png') }}" height="40" alt="trlpht industries logo">
+            <img src="{{ asset('storage/images/ti-black-trans.png') }}" height="40" alt="trlpht industries logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

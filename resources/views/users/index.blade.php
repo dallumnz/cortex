@@ -30,7 +30,7 @@
                     <div class="col-lg-4 col-sm-4 col-8 flex-grow-1 col-name">
                         <a class="itemside" href="#">
                             <div class="left">
-                                <img src="{{ asset('images/avatars/avatar.jpg') }}" class="img-sm img-thumbnail"
+                                <img src="{{ asset('storage/images/avatars/avatar.jpg') }}" class="img-sm img-thumbnail"
                                     alt="Item">
                             </div>
                             <div class="info">

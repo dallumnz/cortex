@@ -1,7 +1,7 @@
 <aside class="navbar-aside" id="offcanvas_aside">
     <div class="aside-top">
         <a href="page-index-1.html" class="brand-wrap">
-            <img src="{{ asset('images/dalbro-admin.png') }}" height="46" class="logo" alt="dalbro Admin Panel">
+            <img src="{{ asset('storage/images/dalbro-admin.png') }}" height="46" class="logo" alt="dalbro Admin Panel">
         </a>
         <div>
             <button class="btn btn-icon btn-aside-minimize">

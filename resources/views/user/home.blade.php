@@ -28,7 +28,7 @@
                         <figure class="itemside align-items-center">
                             <div class="aside">
                                 <span class="bg-gray icon-md rounded-circle">
-                                    <img src="images/avatars/avatar.jpg" class="icon-md rounded-circle">
+                                    <img src="storage/images/avatars/avatar.jpg" class="icon-md rounded-circle">
                                 </span>
                             </div>
                             <figcaption class="info">
