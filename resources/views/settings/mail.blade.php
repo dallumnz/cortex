@@ -6,35 +6,31 @@
     <div class="content-header">
         <h2 class="content-title">Site settings </h2>
     </div>
-    @include('system.notification')
+
     <div class="card">
         <div class="card-body">
             <div class="row gx-5">
                 @include('settings.partials.nav-pills')
                 <div class="col-lg-9">
                     <section class="content-body p-xl-4">
-                        <form method="POST" action="{{ route('settings.store') }}">
-                            @csrf
+                        <form>
                             <div class="row border-bottom mb-4 pb-4">
                                 <div class="col-md-5">
                                     <h5>Basic information</h5>
                                     <p class="text-muted" style="max-width:90%">
-                                        Your website name and site description
+                                        Your website name and site description.
                                     </p>
                                 </div> <!-- col  -->
-                                <?php //dd($settings);?>
                                 <div class="col-md-7">
 
                                     <div class="mb-3">
                                         <label class="form-label">Home page title</label>
-                                        <input class="form-control" type="text" name="page-title"
-                                            value="{{ Setting::get('page-title', 'Cortex') }}">
+                                        <input class="form-control" type="text" name="" placeholder="Type here">
                                     </div>
 
                                     <div class="mb-3">
                                         <label class="form-label">Description</label>
-                                        <textarea type="text" class="form-control"
-                                            name="site-desc">{{ Setting::get('site-desc') }}</textarea>
+                                        <textarea type="text" class="form-control"></textarea>
                                     </div>
 
                                 </div> <!-- col  -->
@@ -44,23 +40,20 @@
                                 <div class="col-md-5">
                                     <h5>Registration</h5>
                                     <p class="text-muted" style="max-width:90%">
-                                        User registration options
+                                        User registration options.
                                     </p>
                                 </div> <!-- col  -->
-
                                 <div class="col-md-7">
 
                                     <label class="mb-2 form-check">
-                                        <input class="form-check-input" type="radio" value="0" name="self-register"
-                                            @if(Setting::get('self-register')==0) checked @endif>
+                                        <input class="form-check-input" name="mycheck_a1" type="radio">
                                         <span class="form-check-label">
                                             Administrator registration only
                                         </span>
                                     </label>
 
                                     <label class="mb-2 form-check">
-                                        <input class="form-check-input" type="radio" value="1" name="self-register"
-                                            @if(Setting::get('self-register')==1) checked @endif>
+                                        <input class="form-check-input" checked="" name="mycheck_a1" type="radio">
                                         <span class="form-check-label">
                                             Self-registration is enabled
                                         </span>
@@ -79,18 +72,15 @@
                                 <div class="col-md-7">
 
                                     <div class="form-check mb-3">
-                                        <input class="form-check-input" type="checkbox" name="admin-notify"
-                                            @if(Setting::get('admin-notify')=='on' ) checked @endif>
-                                        <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="" id="mycheck_notify"
+                                            checked>
+                                        <label class="form-check-label" for="mycheck_notify">
                                             Send notification on new user registration
                                         </label>
-                                        <p class="small text-muted">Only valid if self-registration is enabled.</p>
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label">Email subject line</label>
-                                        <input class="form-control" value="{{ Setting::get('admin-notify-text') }}"
-                                            name="admin-notify-text">
+                                        <input class="form-control" placeholder="Text">
                                     </div>
 
                                 </div> <!-- col  -->

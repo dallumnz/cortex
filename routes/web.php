@@ -49,7 +49,12 @@ Route::middleware(['auth'])->group(function () {
 Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/users', [UsersController::class, 'index'])->name('users.index');
+    // Settings
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
+    Route::get('/settings/regional', [SettingsController::class, 'regional'])->name('settings.regional');
+    Route::get('/settings/analytics', [SettingsController::class, 'analytics'])->name('settings.analytics');
+    Route::get('/settings/mail', [SettingsController::class, 'mail'])->name('settings.mail');
+    Route::post('/settings/store', [SettingsController::class, 'store'])->name('settings.store');
     // Newsletters
     Route::get('/newsletters', [NewsletterController::class, 'index'])->name('newsletters.index');
     Route::get('/newsletters/delete/{id}', [NewsletterController::class, 'destroy'])->name('newsletters.destroy');

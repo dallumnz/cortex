@@ -30,7 +30,7 @@
     <meta name="msapplication-TileImage" content="{{ asset('/images/icons/ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ setting('page-title', 'Cortex') }}</title>
 
     @vite(['resources/js/app.js'])
 

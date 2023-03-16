@@ -67,6 +67,11 @@
                 {{--<li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>--}}
                 @guest
+                @if (Route::has('register') && Setting::get('self-register') == 1)
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                </li>
+                @endif
                 @if(Route::has('login'))
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">Admin</a>

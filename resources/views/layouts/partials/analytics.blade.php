@@ -1,9 +1,10 @@
+@if(!empty(Setting::get('google-measurement-id')))
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BQHPWYVM2P"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ Setting::get('google-measurement-id') }}"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    // Refactor for settings
-    gtag('config', 'G-BQHPWYVM2P');
+    gtag('config', '{{ Setting::get('google-measurement-id') }}');
 </script>
+@endif

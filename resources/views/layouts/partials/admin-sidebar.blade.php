@@ -27,9 +27,9 @@
             <hr>
             <small class="text-muted">MANAGE</small>
             <li class="menu-item">
-                <a class="menu-link" href="#">
-                    <i class="bi bi-people-fill"></i>
-                    <span class="text">User Accounts</span>
+                <a class="menu-link" href="{{ route('categories.index') }}">
+                    <i class="bi bi-clipboard-fill"></i>
+                    <span class="text">Categories</span>
                 </a>
             </li>
             <li class="menu-item">
@@ -39,9 +39,9 @@
                 </a>
             </li>
             <li class="menu-item">
-                <a class="menu-link" href="{{ route('categories.index') }}">
-                    <i class="bi bi-clipboard-fill"></i>
-                    <span class="text">Categories</span>
+                <a class="menu-link" href="#">
+                    <i class="bi bi-people-fill"></i>
+                    <span class="text">User Accounts</span>
                 </a>
             </li>
             <li class="menu-item">
