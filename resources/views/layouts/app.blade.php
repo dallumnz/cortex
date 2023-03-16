@@ -33,6 +33,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     @vite(['resources/js/app.js'])
+
+    @include('layouts.partials.analytics')
 </head>
 
 <body>
