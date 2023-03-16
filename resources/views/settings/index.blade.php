@@ -4,7 +4,7 @@
 <section class="content-main">
 
     <div class="content-header">
-        <h2 class="content-title">Site settings </h2>
+        <h2 class="content-title">System settings </h2>
     </div>
     @include('system.notification')
     <div class="card">
@@ -19,20 +19,20 @@
                                 <div class="col-md-5">
                                     <h5>Basic information</h5>
                                     <p class="text-muted" style="max-width:90%">
-                                        Your website name and site description
+                                        Your website name and description
                                     </p>
                                 </div> <!-- col  -->
                                 <?php //dd($settings);?>
                                 <div class="col-md-7">
 
                                     <div class="mb-3">
-                                        <label class="form-label">Home page title</label>
+                                        <label class="form-label">Website name</label>
                                         <input class="form-control" type="text" name="page-title"
                                             value="{{ Setting::get('page-title', 'Cortex') }}">
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label">Description</label>
+                                        <label class="form-label">Website Description</label>
                                         <textarea type="text" class="form-control"
                                             name="site-desc">{{ Setting::get('site-desc') }}</textarea>
                                     </div>
