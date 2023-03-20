@@ -25,7 +25,7 @@
                 <div class="card-body">
                     <div class="small text-muted">
                         <i class="bi bi-calendar"></i>
-                        {{ $featured->created_at->format('d M Y') }}
+                        {{ $featured->created_at->format(setting('long-date-format')) }}
                     </div>
                     <span class="badge bg-primary text-decoration-none link-light"> Featured </span>
                     <span class="badge bg-primary text-decoration-none link-light">
@@ -48,7 +48,7 @@
                         <div class="card-body">
                             <div class="small text-muted">
                                 <i class="bi bi-calendar"></i>
-                                {{ $headline->created_at->format('d M Y') }}
+                                {{ $headline->created_at->format(setting('short-date-format')) }}
                             </div>
                             <div class="small text-muted">
                                 <span class="badge bg-primary text-decoration-none link-light"> Headline </span>
@@ -81,7 +81,7 @@
                         <div class="card-body">
                             <div class="small text-muted">
                                 <i class="bi bi-calendar"></i>
-                                {{ $post->created_at->format('d M Y') }}
+                                {{ $post->created_at->format(setting('short-date-format')) }}
                             </div>
                             <div class="small text-muted">
                                 <span class="badge bg-primary text-decoration-none link-light"> Recommended </span>
@@ -122,6 +122,7 @@
             @include('guest.widgets.search')
             @include('guest.widgets.categories')
             @include('guest.widgets.newsletter')
+            @include('guest.widgets.static-pages')
         </div>
     </div>
 </div>

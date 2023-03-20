@@ -32,6 +32,7 @@ Route::get('/search', SearchController::class)->name('search');
 
 // Guest routes
 Route::get('/', [GuestController::class, 'index'])->name('app.index');
+Route::get('/page/{slug}', [GuestController::class, 'staticPage'])->name('page.show');
 Route::get('/p/{slug}', [GuestController::class, 'singlePost'])->name('post.show')->middleware('analytics');
 Route::get('/c/{slug}', [GuestController::class, 'categories'])->name('post.category');
 Route::get('/c/s/{slug}', [GuestController::class, 'subcategories'])->name('post.subcategory');
@@ -81,7 +82,11 @@ Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/posts/delete/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
     // Pages
     Route::get('/pages', [PageController::class, 'index'])->name('pages.index');
-    Route::get('/pages/new', [PageController::class, 'create'])->name('pages.create');
-    Route::post('/pages/new', [PageController::class, 'store'])->name('pages.store');
+    Route::get('/pages/add', [PageController::class, 'create'])->name('pages.create');
+    Route::post('/pages/store', [PageController::class, 'store'])->name('pages.store');
+    Route::get('/pages/edit/{id}', [PageController::class, 'edit'])->name('pages.edit');
+    Route::post('/pages/update/{id}', [PageController::class, 'update'])->name('pages.update');
+    Route::get('/pages/delete/{id}', [PageController::class, 'delete'])->name('pages.destroy');
+
     Route::get('/blank', [AdminController::class, 'blank'])->name('admin.blank');
 });

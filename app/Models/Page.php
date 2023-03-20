@@ -10,18 +10,16 @@ class Page extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
         'title',
         'slug',
-        'meta_title',
-        'meta_description',
+        'description',
+        'status',
         'visibility',
-        'breadcrumb',
         'content',
     ];
 
     protected $casts = [
+        'status' => 'boolean',
         'visibility' => 'boolean',
-        'breadcrumb' => 'boolean',
     ];
 }

@@ -16,82 +16,49 @@
 
     <div class="card mb-4">
         <div class="card-body">
-            {{-- <h5class="card-title">Alttable</h5> --}}
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <th>Name</th>
-                            <th>Slug</th>
-                            <th>Date Created</th>
-                            <th>Visibility</th>
-                            <th>Show Breadcrumb</th>
-                        </thead>
-                        <tr>
-                            <td><b>Page Title</b></td>
-                            <td>page-title-slug</td>
-                            <td>07/05/2020</td>
-                            <td>
-                                <span class="badge rounded-pill bg-success">Active</span>
-                                <span class="badge rounded-pill bg-danger">Inactive</span>
-                            </td>
-                            <td>
-                                <span class="badge rounded-pill bg-success">True</span>
-                                <span class="badge rounded-pill bg-danger">False</span>
-                            </td>
-                            <td class="text-end">
-                                <a href="#" class="btn btn-light">Detail</a>
-                                <div class="btn-group dropdown">
-                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-light"> <i
-                                            class="bi bi-pen-fill"></i> </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">View detail</a>
-                                        <a class="dropdown-item" href="#">Edit info</a>
-                                        <a class="dropdown-item text-danger" href="#">Delete</a>
-                                    </div>
-                                </div> <!-- dropdown end -->
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b>Page Title</b></td>
-                            <td>page-title-slug</td>
-                            <td>07/05/2020</td>
-                            <td><span class="badge rounded-pill bg-success">Active</span></td>
-                            <td><span class="badge rounded-pill bg-danger">Inactive</span></td>
-                            <td class="text-end">
-                                <a href="#" class="btn btn-light">Detail</a>
-                                <div class="btn-group dropdown">
-                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-light"> <i
-                                            class="bi bi-pen-fill"></i> </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">View detail</a>
-                                        <a class="dropdown-item" href="#">Edit info</a>
-                                        <a class="dropdown-item text-danger" href="#">Delete</a>
-                                    </div>
-                                </div> <!-- dropdown end -->
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b>Page Title</b></td>
-                            <td>page-title-slug</td>
-                            <td>07/05/2020</td>
-                            <td><span class="badge rounded-pill bg-success">Active</span></td>
-                            <td><span class="badge rounded-pill bg-danger">Inactive</span></td>
-                            <td class="text-end">
-                                <a href="#" class="btn btn-light">Detail</a>
-                                <div class="btn-group dropdown">
-                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-light"> <i
-                                            class="bi bi-pen-fill"></i> </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">View detail</a>
-                                        <a class="dropdown-item" href="#">Edit info</a>
-                                        <a class="dropdown-item text-danger" href="#">Delete</a>
-                                    </div>
-                                </div> <!-- dropdown end -->
-                            </td>
-                        </tr>
-
-                    </table>
-                </div> <!-- table-responsive end// -->
+            @foreach($pages as $page)
+            <article class="itemlist">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-sm-4 col-8 flex-grow-1 col-name">
+                        <a class="itemside" href="{{ route('pages.edit', $page->id) }}">
+                            <div class="left">
+                                <h6 class="mb-0">{{ $page->title }}</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-4 col-status">
+                        @if ($page->status)
+                        <span class="badge rounded-pill bg-success">Published</span>
+                        @else
+                        <span class="badge rounded-pill bg-danger">Draft</span>
+                        @endif
+                        @if ($page->visibility)
+                        <span class="badge rounded-pill bg-info">Public</span>
+                        @else
+                        <span class="badge rounded-pill bg-warning">Private</span>
+                        @endif
+                    </div>
+                    <div class="col-lg-1 col-sm-2 col-4 col-action">
+                        <div class="dropdown float-end">
+                            <a href="#" data-bs-toggle="dropdown" class="btn btn-light">
+                                <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('page.show', $page->id) }}">
+                                    Show preview
+                                </a>
+                                <a class="dropdown-item" href="{{ route('pages.edit', $page->id) }}">
+                                    Edit
+                                </a>
+                                <a class="dropdown-item text-danger" href="{{ route('pages.destroy', $page->id) }}">
+                                    Delete
+                                </a>
+                            </div>
+                        </div> <!-- dropdown -->
+                    </div>
+                </div> <!-- row -->
+            </article> <!-- itemlist -->
+            @endforeach
         </div> <!-- card-body end// -->
     </div> <!-- card end// -->
     @endsection

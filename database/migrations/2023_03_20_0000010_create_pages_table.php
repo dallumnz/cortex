@@ -1,10 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -14,13 +15,11 @@ return new class extends Migration {
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
             $table->string('title');
             $table->string('slug');
-            $table->text('meta_title');
-            $table->text('meta_description');
+            $table->text('description');
+            $table->boolean('status')->default(false);
             $table->boolean('visibility');
-            $table->boolean('breadcrumb');
             $table->longText('content');
 
             $table->timestamps();

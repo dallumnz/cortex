@@ -13,7 +13,7 @@ class PageStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class PageStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => ['required', 'max:255', 'unique:pages,title', 'string'],
+            'description' => ['required', 'max:255', 'string'],
+            'visibility' => ['required', 'boolean'],
+            'content' => ['required', 'string'],
         ];
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Newsletter;
+use App\Models\Page;
 use App\Models\Post;
 use App\Models\PostArticle;
 use App\Models\Subcategory;
@@ -17,8 +18,16 @@ class GuestController extends Controller
         $recommended = Post::where('status', 1)->where('recommended', 1)->orderBy('created_at', 'desc')->take(4)->get();
         $featured = Post::where('featured', 1)->where('status', 1)->latest()->first();
         $categories = Category::get()->all();
+        $static_pages = Page::where('status', 1)->where('visibility', 1)->get();
 
-        return view('index', compact('categories', 'featured', 'headlines', 'recommended'));
+        return view('index', compact('categories', 'featured', 'headlines', 'recommended', 'static_pages'));
+    }
+
+    public function staticPage(string $slug)
+    {
+        $page = Page::where('slug', $slug)->first();
+
+        return view('guest.page', compact('page'));
     }
 
     public function singlePost(string $slug)

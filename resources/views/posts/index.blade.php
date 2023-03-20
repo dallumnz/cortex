@@ -33,7 +33,7 @@
                     <div class="col-lg-2 col-sm-2 col-4">
                         <span>{{ $post->user->name }}</span>
                     </div>
-                    <div class="col-lg-2 col-sm-2 col-4 col-price">
+                    <div class="col-lg-2 col-sm-2 col-4 col-status">
                         @if ($post->status)
                         <span class="badge rounded-pill bg-success">Published</span>
                         @else
