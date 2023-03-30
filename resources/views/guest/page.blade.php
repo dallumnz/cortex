@@ -9,7 +9,7 @@
                 @include('guest.partials.page-header')
                 <!-- Preview image figure-->
                 <figure class="mb-4">
-                    <img class="img-fluid rounded" src="{{-- asset() --}}" alt="..." />
+                    <img class="img-fluid rounded" src="{{ asset('storage/images/theme/banner.jpg') }}" alt="..." />
                 </figure>
                 <!-- Page content-->
                 <section class="mb-5">

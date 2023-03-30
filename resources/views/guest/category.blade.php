@@ -2,12 +2,12 @@
 
 @section('content')
 <!-- page intro  -->
-<header class="py-5 bg-light border-bottom mb-4"
-    style="background-image: url({{ asset('storage/images/theme/page.jpg') }}); background-position-y: bottom;">
+<header class="py-5 border-bottom mb-4"
+    style="background-image: url({{ asset('storage/images/theme/banner.jpg') }}); background-size:cover; background-position-y: bottom;">
     <div class="container">
         <div class="text-center my-5">
-            <h1 class="fw-bolder ">{{ $category->name }}</h1>
-            <p class="lead mb-0 ">All related posts</p>
+            <h1 class="fw-bolder text-white">{{ $category->name }}</h1>
+            <p class="lead mb-0 text-white">All related posts</p>
         </div>
     </div>
 </header>
@@ -22,7 +22,7 @@
             <!-- Blog post-->
             <div class="card mb-4">
                 <a href="{{ route('post.show', $post->slug) }}"><img class="card-img-top"
-                        src="{{ asset($post->post_image) }}" alt="..." /></a>
+                        src="{{ asset($post->post_image) }}" alt="Post image" /></a>
                 <div class="card-body">
                     <div class="small text-muted">
                         <i class="bi bi-calendar"></i>
@@ -49,11 +49,11 @@
         <div class="col-lg-8">
             <div class="card mb-4">
                 <a href="{{ route('app.index') }}">
-                    <img class="card-img-top" src="{{ asset('storage/images/theme/post.jpg') }}" alt="..." />
+                    <img class="card-img-top" src="{{ asset('storage/images/theme/post.jpg') }}" alt="Post image" />
                 </a>
                 <div class="card-body">
                     <h2 class="card-title">No posts</h2>
-                    <p class="card-text">Unfortunately there are no posts in this category. We are adding new content
+                    <p class="card-text">There are currently no posts in this category. We are adding new content
                         all the time, so please check back later. </p>
                     <a class="btn btn-primary" href="{{ route('app.index') }}">Go back</a>
                 </div>
