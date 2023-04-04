@@ -67,13 +67,13 @@
             <hr>
             <small class="text-muted">FEEDBACK</small>
             <li class="menu-item">
-                <a class="menu-link" href="#">
+                <a class="menu-link" href="{{ route('mail.index') }}">
                     <i class="bi bi-envelope-fill"></i>
                     <span class="text">Mail</span>
                 </a>
             </li>
             <li class="menu-item">
-                <a class="menu-link" href="#">
+                <a class="menu-link" href="{{ route('analytics.index') }}">
                     <i class="bi bi-bar-chart-fill"></i>
                     <span class="text">Analytics</span>
                 </a>

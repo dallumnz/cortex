@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Scout\Searchable;
+use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Post extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia, Searchable;
+    use HasFactory, InteractsWithMedia, Searchable, HasSEO;
 
     const POST_FORMAT = 'post_format';
 

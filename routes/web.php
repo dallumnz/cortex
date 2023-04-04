@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AnalyticController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
@@ -87,6 +89,10 @@ Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/pages/edit/{id}', [PageController::class, 'edit'])->name('pages.edit');
     Route::post('/pages/update/{id}', [PageController::class, 'update'])->name('pages.update');
     Route::get('/pages/delete/{id}', [PageController::class, 'delete'])->name('pages.destroy');
-
+    // Mail and Messaging
+    Route::get('/mail', [MailController::class, 'index'])->name('mail.index');
+    // Analytics
+    Route::get('/analytics', [AnalyticController::class, 'index'])->name('analytics.index');
+    // Blank page for development use only.
     Route::get('/blank', [AdminController::class, 'blank'])->name('admin.blank');
 });
