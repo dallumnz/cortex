@@ -19,7 +19,8 @@
                                 <div class="col-md-5">
                                     <h5>Basic information</h5>
                                     <p class="text-muted" style="max-width:90%">
-                                        Your website name and description
+                                        Your website name and description. Changes to your website name must be made
+                                        manually by your system administrator.
                                     </p>
                                 </div> <!-- col  -->
                                 <?php //dd($settings);?>
@@ -27,8 +28,8 @@
 
                                     <div class="mb-3">
                                         <label class="form-label">Website name</label>
-                                        <input class="form-control" type="text" name="page-title"
-                                            value="{{ Setting::get('page-title', 'Cortex') }}">
+                                        <input class="form-control" type="text" name="site-name" disabled
+                                            value="{{ Setting::get('site-name') }}">
                                     </div>
 
                                     <div class="mb-3">

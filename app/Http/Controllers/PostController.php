@@ -45,6 +45,7 @@ class PostController extends Controller
         $request->has('headline') ? $validated['headline'] = true : $validated['headline'] = false;
         // Add post
         $post = Post::create($validated);
+
         // Add post type
         $data = $request->all();
         if ($data['post_type'] == Post::TYPE_ARTICLE) {
@@ -59,6 +60,8 @@ class PostController extends Controller
         if ($request->hasFile('post_image') && $request->file('post_image')->isValid()) {
             $post->addMediaFromRequest('post_image')->toMediaCollection('post_images');
         }
+        // Update SEO
+        $this->updateSEO($post);
 
         return redirect()->route('posts.index')->with('success', __('app.common.created'));
     }
@@ -121,6 +124,7 @@ class PostController extends Controller
 
         $post = Post::findOrFail($request->id);
         $post->update($validated);
+        $this->updateSEO($post);
 
         if ($post->post_type == Post::TYPE_ARTICLE) {
             PostArticle::where('post_id', $post->id)->update(['content' => $request->content]);
@@ -150,6 +154,10 @@ class PostController extends Controller
         if ($post->post_type == Post::TYPE_ARTICLE) {
             PostArticle::where('post_id', $post->id)->delete();
         }
+        // Delete post dependencies
+        $seo = $post->seo();
+        $seo->delete();
+        // TODO: Probably should delete any images too
         $post->delete();
 
         return redirect()->route('posts.index')->with('success', __('app.common.removed'));
@@ -215,5 +223,15 @@ class PostController extends Controller
         } else {
             return back()->with(false);
         }
+    }
+
+    public function updateSEO(Post $post)
+    {
+        return $post->seo->update([
+            'title' => $post->title,
+            'description' => $post->description,
+            'author' => $post->user->name,
+            'image' => $post->post_image,
+        ]);
     }
 }

@@ -15,7 +15,9 @@
         </button>
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link btn-icon" href="{{ route('app.index') }}"> <i class="bi bi-house-fill"></i> </a>
+                <a class="nav-link btn-icon" href="{{ route('app.index') }}" target="_blank">
+                    <i class="bi bi-window-plus"></i>
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link btn-icon" href="#"> <i class="bi bi-bell-fill"></i> </a>

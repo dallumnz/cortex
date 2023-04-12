@@ -18,14 +18,14 @@
                     <span class="text">Dashboard</span>
                 </a>
             </li>
+            <hr>
+            <small class="text-muted">MANAGE</small>
             <li class="menu-item">
                 <a class="menu-link" href="{{ route('posts.index') }}">
                     <i class="bi bi-file-earmark-richtext-fill"></i>
                     <span class="text">Posts</span>
                 </a>
             </li>
-            <hr>
-            <small class="text-muted">MANAGE</small>
             <li class="menu-item">
                 <a class="menu-link" href="{{ route('categories.index') }}">
                     <i class="bi bi-clipboard-fill"></i>

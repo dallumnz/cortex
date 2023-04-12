@@ -13,28 +13,23 @@
                 @include('settings.partials.nav-pills')
                 <div class="col-lg-9">
                     <section class="content-body p-xl-4">
-                        <form method="POST" action="{{ route('settings.store') }}">
-                            @csrf
+                        <form>
                             <div class="row border-bottom mb-4 pb-4">
                                 <div class="col-md-5">
-                                    <h5>Google Analytics</h5>
+                                    <h5>Sitemap XML</h5>
                                     <p class="text-muted" style="max-width:90%">
-                                        Your Google Analytics Measurement ID.
+                                        Generate your sitemap.xml file. <br />This may take some time.
                                     </p>
                                 </div> <!-- col  -->
                                 <div class="col-md-7">
 
                                     <div class="mb-3">
-                                        <label class="form-label">Measurement ID</label>
-                                        <input class="form-control" type="text" name="google-measurement-id"
-                                            value="{{ Setting::get('google-measurement-id') }}">
+                                        <a class="btn btn-primary" href="{{ route('sitemap.generate') }}">Generate
+                                            sitemap.xml</a>
                                     </div>
 
                                 </div> <!-- col  -->
                             </div> <!-- row  -->
-
-                            <button class="btn btn-primary" type="submit">Save all changes</button> &nbsp;
-                            <button class="btn btn-outline-danger" type="reset">Reset</button>
 
                         </form>
 

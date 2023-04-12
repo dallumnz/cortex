@@ -3,6 +3,7 @@
         <a class="nav-link" href="{{ route('settings.index') }}">General</a>
         <a class="nav-link" href="{{ route('settings.regional') }}">Regional</a>
         <a class="nav-link" href="{{ route('settings.analytics') }}">Analytics</a>
+        <a class="nav-link" href="{{ route('settings.seo') }}">Search Engines</a>
         <a class="nav-link" href="{{ route('settings.mail') }}">Mail</a>
         <a class="nav-link" href="#">Newsletter</a>
     </nav>

@@ -56,6 +56,7 @@ Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
     Route::get('/settings/regional', [SettingsController::class, 'regional'])->name('settings.regional');
     Route::get('/settings/analytics', [SettingsController::class, 'analytics'])->name('settings.analytics');
+    Route::get('/settings/seo', [SettingsController::class, 'seo'])->name('settings.seo');
     Route::get('/settings/mail', [SettingsController::class, 'mail'])->name('settings.mail');
     Route::post('/settings/store', [SettingsController::class, 'store'])->name('settings.store');
     // Newsletters
@@ -93,6 +94,8 @@ Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/mail', [MailController::class, 'index'])->name('mail.index');
     // Analytics
     Route::get('/analytics', [AnalyticController::class, 'index'])->name('analytics.index');
+    // Sitemap XML
+    Route::get('/sitemap', [ApplicationController::class, 'generateSitemap'])->name('sitemap.generate');
     // Blank page for development use only.
     Route::get('/blank', [AdminController::class, 'blank'])->name('admin.blank');
 });

@@ -30,6 +30,13 @@ class SettingsController extends Controller
         return view('settings.analytics', compact('user'));
     }
 
+    public function seo()
+    {
+        $user = Auth::user();
+
+        return view('settings.seo', compact('user'));
+    }
+
     public function mail()
     {
         $user = Auth::user();

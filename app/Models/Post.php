@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Scout\Searchable;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -18,16 +19,19 @@ class Post extends Model implements HasMedia
 
     const ARTICLE = 'article';
 
-    const CREATE_ARTICLE = 'article/create';
+    //const CREATE_ARTICLE = 'article/create';
 
-    const ADD_ARTICLE = 'add_article';
+    //const ADD_ARTICLE = 'add_article';
 
     const TYPE_NONE = 0;
 
     const TYPE_ARTICLE = 1;
 
+    const TYPE_AUDIO = 2;
+
     const TYPE = [
         self::TYPE_ARTICLE => 'Article',
+        self::TYPE_AUDIO => 'Audio',
     ];
 
     protected $fillable = [
@@ -76,6 +80,11 @@ class Post extends Model implements HasMedia
         return $this->hasOne(PostArticle::class);
     }
 
+    public function postAudio()
+    {
+        return $this->hasOne(PostAudio::class);
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -99,5 +108,15 @@ class Post extends Model implements HasMedia
         }
 
         return Storage::disk('public')->url('images/posts/default.jpg');
+    }
+
+    public function getDynamicSEOData(): SEOData
+    {
+        return new SEOData(
+            title: $this->title,
+            description: $this->description,
+            //author: $this->user->name,
+            //section: $this->category,
+        );
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
+use Spatie\Sitemap\SitemapGenerator;
 
 class ApplicationController extends Controller
 {
@@ -15,5 +16,12 @@ class ApplicationController extends Controller
                             ->get();
 
         return response()->json($subcategories);
+    }
+
+    public function generateSitemap()
+    {
+        SitemapGenerator::create(config('app.url'))->getSitemap()->writeToDisk('public', 'sitemap.xml');
+
+        return back()->with('success', 'Sitemap generation successful');
     }
 }

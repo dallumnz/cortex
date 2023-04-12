@@ -12,7 +12,7 @@ return [
     /**
      * Use this setting to specify the site name that will be used in OpenGraph tags.
      */
-    'site_name' => null,
+    'site_name' => config('app.name'),
 
     /**
      * Use this setting to specify the path to the sitemap of your website. This exact path will outputted, so
@@ -43,7 +43,7 @@ return [
          * See https://developers.google.com/search/docs/advanced/robots/robots_meta_tag
          * Default: 'max-snippet:-1, max-image-preview:large, max-video-preview:-1'
          */
-        'default' => 'max-snippet:1,max-image-preview:large,max-video-preview:1',
+        'default' => 'max-snippet:-1,max-image-preview:large,max-video-preview:-1',
 
         /**
          * Force set the robots `default` value and make it impossible to overwrite it. (e.g. via SEOData->robots)
@@ -75,14 +75,14 @@ return [
          * Use this setting to provide a suffix that will be added after the title on each page.
          * If you don't want a suffix, you should specify an empty string.
          */
-        'suffix' => '',
+        'suffix' => ' | '.config('app.name'),
 
         /**
          * Use this setting to provide a custom title for the homepage. We will not use the suffix on the homepage,
          * so you'll need to add the suffix manually if you want that. If set to null, we'll determine the title
          * just like the other pages.
          */
-        'homepage_title' => null,
+        'homepage_title' => config('app.name').' Home',
     ],
 
     'description' => [

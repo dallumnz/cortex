@@ -6,7 +6,7 @@
     <div class="content-header">
         <h2 class="content-title">System Settings </h2>
     </div>
-
+    @include('system.notification')
     <div class="card">
         <div class="card-body">
             <div class="row gx-5">
