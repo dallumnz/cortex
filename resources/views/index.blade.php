@@ -6,8 +6,8 @@
     style="background-image: url({{ asset('storage/images/theme/banner.jpg') }}); background-size: cover;">
     <div class="container">
         <div class="text-center my-5">
-            <h1 class="fw-bolder text-white">trlpht industries</h1>
-            <p class="lead mb-0 text-white">Your success is our mission.</p>
+            <h1 class="fw-bolder text-white">Cortex</h1>
+            <p class="lead mb-0 text-white">by dalbro web development</p>
         </div>
     </div>
 </header>

@@ -24,5 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CreateSettingsSeeder::class);
         $this->call(CreateCategoriesSeeder::class);
         $this->call(CreateSubcategoriesSeeder::class);
+        $this->call(CreatePostSeeder::class);
+        $this->call(CreateArticleSeeder::class);
     }
 }

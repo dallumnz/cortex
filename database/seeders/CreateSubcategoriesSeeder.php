@@ -15,8 +15,8 @@ class CreateSubcategoriesSeeder extends Seeder
     public function run()
     {
         Subcategory::create([
-            'name' => 'Content categories',
-            'slug' => 'content-categories',
+            'name' => 'Tutorial',
+            'slug' => 'tutorial',
             'parent_category_id' => 2,
         ]);
     }

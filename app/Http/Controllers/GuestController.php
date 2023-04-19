@@ -14,10 +14,11 @@ class GuestController extends Controller
 {
     public function index()
     {
+        //Get posts depending on visibility rules
         $headlines = Post::where('status', 1)->where('headline', 1)->orderBy('created_at', 'desc')->take(4)->get();
         $recommended = Post::where('status', 1)->where('recommended', 1)->orderBy('created_at', 'desc')->take(4)->get();
-        $featured = Post::where('featured', 1)->where('status', 1)->latest()->first();
-        $categories = Category::get()->all();
+        $featured = Post::where('status', 1)->where('featured', 1)->latest()->first();
+        $categories = Category::all();
         $static_pages = Page::where('status', 1)->where('visibility', 1)->get();
 
         return view('index', compact('categories', 'featured', 'headlines', 'recommended', 'static_pages'));

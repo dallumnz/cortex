@@ -74,16 +74,16 @@
                 @endif
                 @if(Route::has('login'))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Admin</a>
+                    <a class="nav-link" href="{{ route('login') }}">Log in</a>
                 </li>
                 @endif
                 @endguest
                 @auth
                 <li class="nav-item">
                     @if(Auth::user()->is_admin)
-                    <a class="nav-link" href="{{ route('admin.index') }}">{{ Auth::user()->name }}</a>
+                    <a class="nav-link" href="{{ route('admin.index') }}">Admin Panel</a>
                     @else
-                    <a class="nav-link" href="{{ route('home.index') }}">{{ Auth::user()->name }}</a>
+                    <a class="nav-link" href="{{ route('home.index') }}">My Profile</a>
                     @endif
                 </li>
                 @endauth
