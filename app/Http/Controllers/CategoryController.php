@@ -40,11 +40,12 @@ class CategoryController extends Controller
      */
     public function edit(Request $request)
     {
+        $user = Auth::user();
         $category = Category::findOrFail($request->id);
         $categories = Category::get()->all();
         $subcategory = Subcategory::where('parent_category_id', $category->id);
 
-        return view('categories.index', compact('categories', 'category'));
+        return view('categories.index', compact('categories', 'category', 'subcategory', 'user'));
     }
 
     /**

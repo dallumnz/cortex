@@ -23,11 +23,12 @@
                 <a class="nav-link btn-icon" href="#"> <i class="bi bi-bell-fill"></i> </a>
             </li>
             <li class="nav-item px-3">
-                <span>{{ Auth::user()->name }}</span>
+                {{-- Auth::user()->name --}}
+                <span>{{ $user['name'] }}</span>
             </li>
             <li class="dropdown nav-item">
                 <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#"> <img class="img-xs rounded-circle"
-                        src="{{ $user->gravatar }}" alt="{{ Auth::user()->name . ' menu' }}"></a>
+                        src="{{ $user->gravatar }}" alt="{{ $user['name'] . ' menu' }}"></a>
                 <div class="dropdown-menu dropdown-menu-end">
                     <a class="dropdown-item" href="#">My Profile</a>
                     <a href="{{ route('logout') }}" class="dropdown-item"

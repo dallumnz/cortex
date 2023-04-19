@@ -25,7 +25,7 @@ class SubcategoryController extends Controller
         if ($subcategory === null) {
             $parent_id = $category->id;
 
-            return view('subcategories.index', compact('parent_id', 'categories', 'category', 'user')); //->with('categories', [$categories]);
+            return view('subcategories.index', compact('parent_id', 'categories', 'category', 'user'));
         }
 
         $parent_id = $subcategory->parent_category_id;
@@ -35,6 +35,8 @@ class SubcategoryController extends Controller
     }
 
     /**
+     * Store a subcategory
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(SubcategoryStoreRequest $request)
@@ -48,20 +50,21 @@ class SubcategoryController extends Controller
 
     /**
      * @param  \App\Models\Subcategory  $subcategory
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function edit(Request $request)
     {
+        $user = Auth::user();
         $subcategory = Subcategory::findOrFail($request->id);
         $subcategories = Subcategory::where('parent_category_id', $request->id)->get();
         $parent_id = $subcategory->parent_category_id;
         $category = Category::find($parent_id, 'id')->first();
 
-        return view('subcategories.index', compact('parent_id', 'category', 'subcategory', 'subcategories'));
+        return view('subcategories.index', compact('parent_id', 'category', 'subcategory', 'subcategories', 'user'));
     }
 
     /**
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Redirect
      */
     public function update(SubcategoryUpdateRequest $request)
     {
@@ -75,9 +78,7 @@ class SubcategoryController extends Controller
     }
 
     /**
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Subcategory  $subcategory
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Redirect
      */
     public function destroy($id)
     {
