@@ -9,23 +9,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="http://gitea.lan:3000/dallum/README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/dallumnz/cortex">
+    <img src="public/logo.png" alt="Logo" width="200" height="90">
   </a>
 
-<h3 align="center">dalbro cms</h3>
+<h3 align="center">Cortex</h3>
 
   <p align="center">
-    Content management for dalbro projects.
+    News and Magazine Web App.
     <br />
-    <a href="http://gitea.lan:3000/dallum/README-Template"><strong>Documentation »</strong></a>
+    <a href="https://github.com/dallumnz/cortex"><strong>Documentation »</strong></a>
     <br />
     <br />
-    <a href="http://gitea.lan:3000/dallum/README-Template">View Demo</a>
+    <a href="https://github.com/dallumnz/cortex">View Demo</a>
     ·
-    <a href="http://gitea.lan:3000/dallum/README-Template/issues">Report Bug</a>
+    <a href="https://github.com/dallumnz/cortex/issues">Report Bug</a>
     ·
-    <a href="http://gitea.lan:3000/dallum/README-Template/issues">Request Feature</a>
+    <a href="https://github.com/dallumnz/cortex/issues">Request Feature</a>
   </p>
 </div>
 
@@ -64,7 +64,6 @@
 ### Built With
 
 * [![Laravel][Laravel.com]][Laravel-url]
-* [![Vue][Vue.js]][Vue-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 
@@ -77,17 +76,20 @@ To get started, clone this repository and install dependencies:
 
 ```composer install```
 
-```npm install && npm run dev```
+```npm install && npm run build```
 
 You will also need to make sure a MySQL database is available for use and your environment is configured (i.e. ```.env``` file).
 
-You can now run the migrations and (currently optional) seeders.
+You can now run the migrations and seeders.
+
+```php artisan migrate:fresh --seed```
 
 You can also fork this repository for your ongoing use if you find the project helpful. Please also "star" the project to show your support. Thanks!
 
 ### Prerequisites
 
-Coming soon
+For search indexing, we use Meilisearch. 
+You will need to configure settings as appropriate.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -101,7 +103,7 @@ Coming soon
 <!-- ROADMAP -->
 ## Roadmap
 
-Coming soon
+Development is currently in progress. Not all features are implemented. Please see the issues page.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -134,7 +136,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Dallum Brown - [@trlpht](https://twitter.com/trlpht) - dallum.brown@gmail.com
 
-Project Link: [http://gitea.lan:3000/dallum/README-Template](http://gitea.lan:3000/dallum/README-Template)
+Project Link: [https://github.com/dallumnz/cortex](https://github.com/dallumnz/cortex)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -148,7 +150,7 @@ This project could not progress without the generous support of the following pe
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: public/screenshot.png
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vue-url]: https://vuejs.org/
 [Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
